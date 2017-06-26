@@ -2,7 +2,7 @@
     function () {
 
         return {
-            restrict: 'N',
-            templateUrl: 'App / CustomerForm / ntTemplate.html'
+            restrict: 'E',
+            templateUrl: 'App/CustomerForm/ntTemplate.html'
             }
     });
