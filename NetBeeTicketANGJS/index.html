@@ -5,13 +5,17 @@
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
     <script src="App/NetBeeTicketApp.js"></script>
     <script src="App/CustomerForm/ntController.js"></script>
     <script src="App/CustomerForm/ntDirective.js"></script>
-    <script src="App/CustomerForm/ntService.js"></script>
+    <script src="App/DataService.js"></script>
 </head>
-<body ng-controller="ntController" class="container">
-    <customer-form/>
+<body class="container">
+    <h1>Welcome!</h1>
+    <div ng-view>
+       
+    </div>
 
 </body>
 </html>

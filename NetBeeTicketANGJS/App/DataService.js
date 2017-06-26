@@ -1,4 +1,4 @@
-﻿NetBeeTicketApp.factory('ntService',
+﻿NetBeeTicketApp.factory('DataService',
     function () {
         return {
             customer: {

@@ -91,8 +91,9 @@
   <ItemGroup>
     <Content Include="App\CustomerForm\ntController.js" />
     <Content Include="App\CustomerForm\ntDirective.js" />
-    <Content Include="App\CustomerForm\ntService.js" />
+    <Content Include="App\DataService.js" />
     <Content Include="App\CustomerForm\ntTemplate.html" />
+    <Content Include="App\home.html" />
     <Content Include="App\NetBeeTicketApp.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
