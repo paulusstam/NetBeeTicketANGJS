@@ -10,6 +10,10 @@ NetBeeTicketApp.config(function ($routeProvider) {
             templateUrl: "App/CustomerForm/ntTemplate.html",
             controller: "ntController"
         })
+        .when("/updateCustomerForm/:id", {
+            templateUrl: "App/CustomerForm/ntTemplate.html",
+            controller: "ntController"
+        })
         .otherwise({
             redirectTo: "/home"
         });
@@ -18,9 +22,14 @@ NetBeeTicketApp.config(function ($routeProvider) {
 NetBeeTicketApp.controller("HomeController",
     function ($scope, $location, DataService) {
 
-        $scope.addNewCustomer = function () {
+        $scope.showCreateCustomerForm = function () {
             $location.path('/newCustomerForm');
 
-        }
+        };
+
+        $scope.showUpdateCustomerForm = function (id) {
+            $location.path('/updateCustomerForm/' + id)
+
+        };
 
     });
