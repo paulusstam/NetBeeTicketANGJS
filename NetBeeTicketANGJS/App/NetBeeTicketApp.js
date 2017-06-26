@@ -1,0 +1,1 @@
+﻿var NetBeeTicketApp = angular.module('NetBeeTicketApp', []);
