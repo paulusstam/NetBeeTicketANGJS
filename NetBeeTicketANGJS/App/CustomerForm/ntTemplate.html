@@ -4,14 +4,16 @@
         <div class="form-group">
             <label for="fullName" class="col-sm-2 control-label">Full Name</label>
             <div class="col-sm-4">
-                <input type="text" id="fullName" name="fullName" class="form-control" />
+                <input type="text" id="fullName" name="fullName" class="form-control"
+                       ng-model="customer.fullName"/>
             </div>
         </div>
 
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">email</label>
             <div class="col-sm-4">
-                <input type="text" id="email" name="email" class="form-control" />
+                <input type="text" id="email" name="email" class="form-control"
+                       ng-model="customer.email"/>
             </div>
         </div>
     </fieldset>
@@ -21,11 +23,9 @@
         <div class="form-group">
             <label for="subscriptionType" class="col-sm-2 control-label">Subscription Type</label>
             <div class="col-sm-4">
-                <select name="subscriptionType" id="subscriptionType" class="formcontrol">
-                    <option>Monthly</option>
-                    <option>Quarterly</option>
-                    <option>Semi-Annual</option>
-                    <option>Annual</option>
+                <select name="subscriptionType" id="subscriptionType" class="formcontrol"
+                        ng-model="customer.subscriptionType"
+                        ng-options="subs for subs in subscriptionType">     
                 </select>
             </div>
         </div>
@@ -36,7 +36,8 @@
             <div class="col-sm-4">
                 <span><b>Details</b></span>
                 <div class="checkbox">
-                    <label><input type="checkbox" value="isSubscribed" />Subscribed Customer</label>
+                    <label><input type="checkbox" value="isSubscribed" 
+                                   ng-model="customer.isSubscribed"/>Subscribed Customer</label>
                 </div>
                 <br />
             </div>
@@ -44,7 +45,8 @@
     </fieldset>
 
     <div class="col-sm-offset-2 col-sm-4">
-        <input type="submit" value="Submit" class="btn btn-primary" />
+        <input type="submit" value="Submit" class="btn btn-primary" 
+               ng-click="submitForm()"/>
     </div>
 
 </form>
