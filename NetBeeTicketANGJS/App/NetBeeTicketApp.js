@@ -1,4 +1,4 @@
-﻿var NetBeeTicketApp = angular.module('NetBeeTicketApp', ["ngRoute"]);
+﻿var NetBeeTicketApp = angular.module('NetBeeTicketApp', ['ngRoute', 'ui.bootstrap']);
 
 NetBeeTicketApp.config(function ($routeProvider) {
     $routeProvider
@@ -20,15 +20,18 @@ NetBeeTicketApp.config(function ($routeProvider) {
 });
 
 NetBeeTicketApp.controller("HomeController",
-    function ($scope, $location, DataService) {
+    function ($scope, $location, $uibModal, DataService) {
 
         $scope.showCreateCustomerForm = function () {
-            $location.path('/newCustomerForm');
-
+            //$location.path('/newCustomerForm');
+            $uibModal.open({
+                templateUrl: "App/CustomerForm/ntTemplate.html",
+                controller: "ntController"
+            });
         };
 
         $scope.showUpdateCustomerForm = function (id) {
-            $location.path('/updateCustomerForm/' + id)
+            $location.path('/updateCustomerForm/' + id);
 
         };
 
