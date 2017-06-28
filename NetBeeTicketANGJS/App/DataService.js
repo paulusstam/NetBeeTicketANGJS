@@ -6,6 +6,7 @@
                     fullName: "Klarinogampros",
                     email: "klarino@gmail.com",
                     subscriptionType: "Annual",
+                    subscriptionDate: "27/06/2017",
                     isSubscribed: true
                 };
             }
