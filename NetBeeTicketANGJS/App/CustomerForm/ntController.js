@@ -132,4 +132,10 @@
             return '';
         }
 
+        //rating
+        $scope.hoveringOver = function (value) {
+            $scope.overStar = value;
+            $scope.percent = 100 * (value / 5);
+        };
+
     });
