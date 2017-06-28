@@ -1,5 +1,5 @@
 ﻿NetBeeTicketApp.controller('ntController',
-    function ntController($scope, $window, $routeParams, DataService) {
+    function ntController($scope, $window, $routeParams, $uibModalInstance, DataService) {
 
         if ($routeParams.id)
             $scope.customer = DataService.getCustomer($routeParams.id);
@@ -27,11 +27,13 @@
                 $scope.customer = angular.copy($scope.editableCustomer);
             }
 
-            $window.history.back();
+            //$window.history.back();
+            $uibModalInstance.close
         };
 
         $scope.cancelForm = function () {
-            $window.history.back();
+            //$window.history.back();
+            $uibModalInstance.dismiss();
         };
 
     });

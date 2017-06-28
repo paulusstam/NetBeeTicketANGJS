@@ -1,54 +1,64 @@
-﻿<form class="form-horizontal" role="form">
-    <fieldset>
-        <legend>Customer Information</legend>
-        <div class="form-group">
-            <label for="fullName" class="col-sm-2 control-label">Full Name</label>
-            <div class="col-sm-4">
-                <input type="text" id="fullName" name="fullName" class="form-control"
-                       ng-model="editableCustomer.fullName"/>
-            </div>
-        </div>
+﻿<div class="modal-header">
+    <h1>Create New Customer</h1>
+</div>
 
-        <div class="form-group">
-            <label for="email" class="col-sm-2 control-label">email</label>
-            <div class="col-sm-4">
-                <input type="text" id="email" name="email" class="form-control"
-                       ng-model="editableCustomer.email"/>
-            </div>
-        </div>
-    </fieldset>
-    <br />
-    <fieldset>
-        <legend>Subscription Details</legend>
-        <div class="form-group">
-            <label for="subscriptionType" class="col-sm-2 control-label">Subscription Type</label>
-            <div class="col-sm-4">
-                <select name="subscriptionType" id="subscriptionType" class="formcontrol"
-                        ng-model="customer.subscriptionType"
-                        ng-options="subs for subs in subscriptionType">     
-                </select>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-4">
-                <span><b>Details</b></span>
-                <div class="checkbox">
-                    <label><input type="checkbox" value="isSubscribed" 
-                                   ng-model="customer.isSubscribed"/>Subscribed Customer</label>
+<div class="modal-body">
+    <form class="form-horizontal" role="form">
+        <fieldset>
+            <legend>Customer Information</legend>
+            <div class="form-group">
+                <label for="fullName" class="col-sm-2 control-label">Full Name</label>
+                <div class="col-sm-4">
+                    <input type="text" id="fullName" name="fullName" class="form-control"
+                           ng-model="editableCustomer.fullName" />
                 </div>
-                <br />
             </div>
-        </div>
-    </fieldset>
 
-    <div class="col-sm-offset-2 col-sm-4">
-        <input type="button"  value="Cancel" class="btn btn-primary"
-               ng-click="cancelForm()"/>
-        <input type="submit" value="Submit" class="btn btn-primary" 
-               ng-click="submitForm()"/>
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">email</label>
+                <div class="col-sm-4">
+                    <input type="text" id="email" name="email" class="form-control"
+                           ng-model="editableCustomer.email" />
+                </div>
+            </div>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Subscription Details</legend>
+            <div class="form-group">
+                <label for="subscriptionType" class="col-sm-2 control-label">Subscription Type</label>
+                <div class="col-sm-4">
+                    <select name="subscriptionType" id="subscriptionType" class="formcontrol"
+                            ng-model="customer.subscriptionType"
+                            ng-options="subs for subs in subscriptionType"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <span><b>Details</b></span>
+                </div>
+                <div class="col-sm-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="isSubscribed"
+                                   ng-model="customer.isSubscribed" />Subscribed Customer
+                        </label>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </fieldset>
+
+       
+    </form>
+</div>
+
+<div class="modal-footer">
+    <div class="col-sm-offset-3 col-sm-9">
+        <input type="button" value="Cancel" class="btn btn-primary"
+               ng-click="cancelForm()" />
+        <input type="submit" value="Submit" class="btn btn-primary"
+               ng-click="submitForm()" />
     </div>
-
-</form>
+</div>
