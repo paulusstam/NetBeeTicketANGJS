@@ -55,17 +55,37 @@
             </div>
 
             <div class="form-group">
+
                 <div class="col-sm-2">
-                    <span><b>Details</b></span>
-                </div>
-                <div class="col-sm-4">
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" value="isSubscribed"
-                                   ng-model="editable.Customer.isSubscribed" />Subscribed Customer
+                                   ng-model="editableCustomer.isSubscribed" />Subscribed Customer
                         </label>
                     </div>
                     <br />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="hasDetails"
+                                   ng-click="isCollapsed = !isCollapsed"
+                                   ng-model="editableCustomer.hasDetails" />Subscription Details?
+                        </label>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <div uib-collapse="!isCollapsed" class="form-group">
+                <label for="subscriptionDetails" class="col-sm-2 control-label">
+
+                </label>
+                <div class="col-sm-4">
+                    <textarea name="notes"  id="notes" class="form-control" rows="5" cols="30"
+                              ng-model="editableCustomer.subscriptionDetails"></textarea>
                 </div>
             </div>
         </fieldset>
