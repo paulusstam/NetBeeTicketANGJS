@@ -17,6 +17,7 @@
 
         $scope.submitForm = function () {
 
+           
             if ($scope.editableCustomer.id == 0) {
                 // insert new customer
                 DataService.insertCustomer($scope.editableCustomer);

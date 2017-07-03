@@ -3,22 +3,25 @@
 </div>
 
 <div class="modal-body">
-    <form class="form-horizontal" role="form">
+    <form  name="customerForm" novalidate class="form-horizontal" role="form">
         <fieldset>
             <legend>Customer Information</legend>
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error': customerForm.fullName.$invalid && customerForm.fullName.$dirty}">
                 <label for="fullName" class="col-sm-2 control-label">Full Name</label>
                 <div class="col-sm-4">
                     <input type="text" id="fullName" name="fullName" class="form-control"
-                           ng-model="editableCustomer.fullName" />
+                           ng-model="editableCustomer.fullName" ng-required="true"
+                           ng-pattern=""/>
+                    <span class="help-block" ng-show="customerForm.fullName.$error.required && customerForm.fullName.$dirty">Full Name is required</span>
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error': customerForm.email.$invalid && customerForm.email.$dirty}">
                 <label for="email" class="col-sm-2 control-label">email</label>
                 <div class="col-sm-4">
-                    <input type="text" id="email" name="email" class="form-control"
+                    <input type="email" id="email" name="email" class="form-control"
                            ng-model="editableCustomer.email" />
+                    <span class="help-block" ng-show="customerForm.email.$invalid && customerForm.email.$dirty">Valid email is required</span>
                 </div>
             </div>
 
@@ -99,6 +102,6 @@
         <input type="button" value="Cancel" class="btn btn-primary"
                ng-click="cancelForm()" />
         <input type="submit" value="Submit" class="btn btn-primary"
-               ng-click="submitForm()" />
+               ng-click="submitForm()" ng-disabled="customerForm.$invalid"/>
     </div>
 </div>
